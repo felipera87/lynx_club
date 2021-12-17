@@ -17,9 +17,9 @@ import {
   StorySectionImages,
   RoadmapSection,
   RoadmapSectionLine,
-  RoadmapSectionElement,
+  RoadmapTimelineBlockLink,
+  RoadmapSectionTimelineItem,
   DevelopmentRoadmapSection,
-  DevelopmentRoadmapContent,
   MeetTheClubSection,
   QuestionSection,
   TeamSection,
@@ -41,7 +41,12 @@ import laserCat from '../../assets/laser_cat.png';
 
 import { useGlobalData } from '../../hooks/global';
 
-import { coverImages, questions, teamMembers } from '../../utils/staticData';
+import {
+  coverImages,
+  questions,
+  developmentRoadmapData,
+  teamMembers,
+} from '../../utils/staticData';
 
 const LandingPage = () => {
   const { mintQuantity, setMintQuantity } = useGlobalData();
@@ -162,9 +167,10 @@ const LandingPage = () => {
       <RoadmapSection>
         <SectionTitle>ROADMAP</SectionTitle>
         <RoadmapSectionLine>
-          <RoadmapSectionElement>
+          <RoadmapSectionTimelineItem>
             <h3>Welcome, Bilionaire Lynx</h3>
-            <div>
+            <div className="timeline-box">
+              <RoadmapTimelineBlockLink />
               <span>10%</span>
             </div>
             <p>
@@ -172,10 +178,10 @@ const LandingPage = () => {
               exclusive club of other like-minded lynx who desire to help each
               other succeed.
             </p>
-          </RoadmapSectionElement>
-          <RoadmapSectionElement>
+          </RoadmapSectionTimelineItem>
+          <RoadmapSectionTimelineItem>
             <h3>Worldwide Recognition</h3>
-            <div>
+            <div className="timeline-box">
               <span>20%</span>
             </div>
             <p>
@@ -184,10 +190,10 @@ const LandingPage = () => {
               our project. We will also be using these funds to purchase a
               rarity.tools ranking for the project.
             </p>
-          </RoadmapSectionElement>
-          <RoadmapSectionElement>
+          </RoadmapSectionTimelineItem>
+          <RoadmapSectionTimelineItem>
             <h3>Billionaire Lynx Charity</h3>
-            <div>
+            <div className="timeline-box">
               <span>40%</span>
             </div>
             <p>
@@ -196,10 +202,10 @@ const LandingPage = () => {
               we will be selecting will have the mission to help promote
               entrepreneurship and creative ventures amongst our youth.
             </p>
-          </RoadmapSectionElement>
-          <RoadmapSectionElement>
+          </RoadmapSectionTimelineItem>
+          <RoadmapSectionTimelineItem>
             <h3>Billionaire Lynx Fund</h3>
-            <div>
+            <div className="timeline-box">
               <span>60%</span>
             </div>
             <p>
@@ -207,20 +213,20 @@ const LandingPage = () => {
               ongoing project developments, marketing campaigns, merchandise,
               and more.
             </p>
-          </RoadmapSectionElement>
-          <RoadmapSectionElement>
+          </RoadmapSectionTimelineItem>
+          <RoadmapSectionTimelineItem>
             <h3>Billionaire Lynx Merch</h3>
-            <div>
+            <div className="timeline-box">
               <span>80%</span>
             </div>
             <p>
               Exclusive member-only merch store begins construction. We want
               this merchandise to make our community proud to wear it.
             </p>
-          </RoadmapSectionElement>
-          <RoadmapSectionElement halfWhiteBackground>
+          </RoadmapSectionTimelineItem>
+          <RoadmapSectionTimelineItem halfWhiteBackground>
             <h3>Holders Rewarded</h3>
-            <div>
+            <div className="timeline-box">
               <span>90%</span>
             </div>
             <p>
@@ -229,10 +235,10 @@ const LandingPage = () => {
               experience amazing events firsthand and to be given the tools to
               go after your creative ventures.
             </p>
-          </RoadmapSectionElement>
-          <RoadmapSectionElement whiteBackground>
+          </RoadmapSectionTimelineItem>
+          <RoadmapSectionTimelineItem whiteBackground>
             <h3>Sold Out</h3>
-            <div>
+            <div className="timeline-box">
               <span>100%</span>
             </div>
             <p>
@@ -240,17 +246,20 @@ const LandingPage = () => {
               which is set for ongoing project developments, marketing
               campaigns, merchandise, and more.
             </p>
-          </RoadmapSectionElement>
+          </RoadmapSectionTimelineItem>
         </RoadmapSectionLine>
-        <Button onClick={handleMintButtonClick}>MINT HERE</Button>
+        <Button dark onClick={handleMintButtonClick}>
+          MINT HERE
+        </Button>
       </RoadmapSection>
       <DevelopmentRoadmapSection>
-        <ImageBackground numberOfImages={10} image={laserCat}>
-          <DevelopmentRoadmapContent>
-            <SectionTitle>DEVELOPMENT ROADMAP</SectionTitle>
-            <TextCarousel />
-          </DevelopmentRoadmapContent>
-        </ImageBackground>
+        <ImageBackground
+          numberOfImages={20}
+          imageSet={[laserCat, astronautCat]}
+          containerHeight={900}
+        />
+        <SectionTitle>DEVELOPMENT ROADMAP</SectionTitle>
+        <TextCarousel items={developmentRoadmapData} />
       </DevelopmentRoadmapSection>
       <MeetTheClubSection>
         <SectionTitle>MEET THE BILLIONAIRE LYNX CLUB</SectionTitle>
@@ -260,7 +269,7 @@ const LandingPage = () => {
           community is made of like-minded Lynx who desire success at the
           highest level.
         </p>
-        <Button>Join Discord</Button>
+        <Button dark>Join Discord</Button>
       </MeetTheClubSection>
       <QuestionSection>
         <SectionTitle>HAVE A QUESTION?</SectionTitle>
