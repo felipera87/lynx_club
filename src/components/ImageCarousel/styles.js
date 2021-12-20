@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { device } from '../../utils/screenBreakpoints';
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -31,14 +33,29 @@ export const DisplayImage = styled.div`
   margin: 0 20px;
 
   ${props => {
-    const size = 180 - 20 * Math.abs(props.middlePosition - props.position);
-    const blur = Math.abs(props.middlePosition - props.position);
+    const sizeMobile =
+      200 - 80 * Math.abs(props.middlePosition - props.position);
+
+    const blurMobile = 5 * Math.abs(props.middlePosition - props.position);
+
     return css`
-      width: ${size}px;
-      height: ${size}px;
-      filter: blur(${blur}px);
+      width: ${sizeMobile > 0 ? sizeMobile : 0}px;
+      height: ${sizeMobile > 0 ? sizeMobile : 0}px;
+      filter: blur(${blurMobile}px);
     `;
   }}
+  ${device.md} {
+    ${props => {
+      const size = 180 - 20 * Math.abs(props.middlePosition - props.position);
+      const blur = Math.abs(props.middlePosition - props.position);
+
+      return css`
+        width: ${size > 0 ? size : 0}px;
+        height: ${size > 0 ? size : 0}px;
+        filter: blur(${blur}px);
+      `;
+    }}
+  }
 
   & > img {
     width: 100%;

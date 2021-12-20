@@ -20,6 +20,8 @@ import {
   RoadmapTimelineBlockLink,
   RoadmapSectionTimelineItem,
   DevelopmentRoadmapSection,
+  DevelopmentRoadmapItemContainer,
+  DevelopmentRoadmapItem,
   MeetTheClubSection,
   QuestionSection,
   TeamSection,
@@ -39,17 +41,20 @@ import Footer from '../../components/Footer';
 import astronautCat from '../../assets/astronaut_cat.png';
 import laserCat from '../../assets/laser_cat.png';
 
+import { screenBreakpoints } from '../../utils/screenBreakpoints';
+
 import { useGlobalData } from '../../hooks/global';
 
 import {
   coverImages,
   questions,
+  roadmapData,
   developmentRoadmapData,
   teamMembers,
 } from '../../utils/staticData';
 
 const LandingPage = () => {
-  const { mintQuantity, setMintQuantity } = useGlobalData();
+  const { mintQuantity, setMintQuantity, documentWidth } = useGlobalData();
   const history = useHistory();
 
   const handleMintButtonClick = useCallback(() => {
@@ -72,8 +77,11 @@ const LandingPage = () => {
   return (
     <Container>
       <Header />
-      <CoverSection>
-        <StarBackground numberOfStars={5000} height={800} />
+      <CoverSection height={documentWidth > screenBreakpoints.md ? 800 : 720}>
+        <StarBackground
+          numberOfStars={5000}
+          height={documentWidth > screenBreakpoints.md ? 800 : 720}
+        />
         <ImageCarousel images={coverImages} />
         <CoverTitle>
           <h1>BILLIONAIRE</h1>
@@ -97,9 +105,11 @@ const LandingPage = () => {
         <AboutSectionContent>
           <AboutSectionCover>
             <img src={astronautCat} alt="About Lynx Club" />
-            <Button dark onClick={handleMintButtonClick}>
-              MINT HERE
-            </Button>
+            {documentWidth > screenBreakpoints.md && (
+              <Button dark onClick={handleMintButtonClick}>
+                MINT HERE
+              </Button>
+            )}
           </AboutSectionCover>
           <AboutSectionText>
             <p>
@@ -135,6 +145,11 @@ const LandingPage = () => {
               community.
             </p>
           </AboutSectionText>
+          {documentWidth <= screenBreakpoints.md && (
+            <Button dark onClick={handleMintButtonClick}>
+              MINT HERE
+            </Button>
+          )}
         </AboutSectionContent>
       </AboutSection>
       <StorySection>
@@ -167,86 +182,31 @@ const LandingPage = () => {
       <RoadmapSection>
         <SectionTitle>ROADMAP</SectionTitle>
         <RoadmapSectionLine>
-          <RoadmapSectionTimelineItem>
-            <h3>Welcome, Bilionaire Lynx</h3>
-            <div className="timeline-box">
-              <RoadmapTimelineBlockLink />
-              <span>10%</span>
-            </div>
-            <p>
-              Welcome to the Billionaire Lynx Club! You are now part of an
-              exclusive club of other like-minded lynx who desire to help each
-              other succeed.
-            </p>
-          </RoadmapSectionTimelineItem>
-          <RoadmapSectionTimelineItem>
-            <h3>Worldwide Recognition</h3>
-            <div className="timeline-box">
-              <span>20%</span>
-            </div>
-            <p>
-              The BLC will use funds from our pre-sale to invest in promotional
-              campaigns to spread brand awareness and drive top tier talent to
-              our project. We will also be using these funds to purchase a
-              rarity.tools ranking for the project.
-            </p>
-          </RoadmapSectionTimelineItem>
-          <RoadmapSectionTimelineItem>
-            <h3>Billionaire Lynx Charity</h3>
-            <div className="timeline-box">
-              <span>40%</span>
-            </div>
-            <p>
-              $20,000 donation fund will be established and as a community, we
-              will vote on the charity of choice to partner with. The charities
-              we will be selecting will have the mission to help promote
-              entrepreneurship and creative ventures amongst our youth.
-            </p>
-          </RoadmapSectionTimelineItem>
-          <RoadmapSectionTimelineItem>
-            <h3>Billionaire Lynx Fund</h3>
-            <div className="timeline-box">
-              <span>60%</span>
-            </div>
-            <p>
-              We will set up the BLC community fund and deposit $50,000 for
-              ongoing project developments, marketing campaigns, merchandise,
-              and more.
-            </p>
-          </RoadmapSectionTimelineItem>
-          <RoadmapSectionTimelineItem>
-            <h3>Billionaire Lynx Merch</h3>
-            <div className="timeline-box">
-              <span>80%</span>
-            </div>
-            <p>
-              Exclusive member-only merch store begins construction. We want
-              this merchandise to make our community proud to wear it.
-            </p>
-          </RoadmapSectionTimelineItem>
-          <RoadmapSectionTimelineItem halfWhiteBackground>
-            <h3>Holders Rewarded</h3>
-            <div className="timeline-box">
-              <span>90%</span>
-            </div>
-            <p>
-              Exclusive BLC giveaways/airdrops that include sporting/music
-              tickets, laptops, phones, NFTs, and more! We want you to
-              experience amazing events firsthand and to be given the tools to
-              go after your creative ventures.
-            </p>
-          </RoadmapSectionTimelineItem>
-          <RoadmapSectionTimelineItem whiteBackground>
-            <h3>Sold Out</h3>
-            <div className="timeline-box">
-              <span>100%</span>
-            </div>
-            <p>
-              Another $30,000 worth of funds will be deposited to the BLC fund,
-              which is set for ongoing project developments, marketing
-              campaigns, merchandise, and more.
-            </p>
-          </RoadmapSectionTimelineItem>
+          {roadmapData.map((roadmapItem, index) => (
+            <RoadmapSectionTimelineItem
+              key={roadmapItem.id}
+              whiteBackground={roadmapItem.whiteBackground}
+              halfWhiteBackground={roadmapItem.halfWhiteBackground}
+            >
+              {documentWidth > screenBreakpoints.md && (
+                <h3>{roadmapItem.title}</h3>
+              )}
+              <div className="timeline-box-container">
+                <div className="timeline-box">
+                  <span>{roadmapItem.checkpoint}</span>
+                </div>
+                {index <= roadmapData.length - 3 && (
+                  <RoadmapTimelineBlockLink />
+                )}
+              </div>
+              <div className="timeline-text">
+                {documentWidth <= screenBreakpoints.md && (
+                  <h3>{roadmapItem.title}</h3>
+                )}
+                <p>{roadmapItem.description}</p>
+              </div>
+            </RoadmapSectionTimelineItem>
+          ))}
         </RoadmapSectionLine>
         <Button dark onClick={handleMintButtonClick}>
           MINT HERE
@@ -259,7 +219,20 @@ const LandingPage = () => {
           containerHeight={900}
         />
         <SectionTitle>DEVELOPMENT ROADMAP</SectionTitle>
-        <TextCarousel items={developmentRoadmapData} />
+        {documentWidth > screenBreakpoints.md ? (
+          <TextCarousel items={developmentRoadmapData} />
+        ) : (
+          <DevelopmentRoadmapItemContainer>
+            {developmentRoadmapData.map(devRoadmapData => {
+              return (
+                <DevelopmentRoadmapItem key={devRoadmapData.id}>
+                  <h3>{devRoadmapData.title}</h3>
+                  <p>{devRoadmapData.description}</p>
+                </DevelopmentRoadmapItem>
+              );
+            })}
+          </DevelopmentRoadmapItemContainer>
+        )}
       </DevelopmentRoadmapSection>
       <MeetTheClubSection>
         <SectionTitle>MEET THE BILLIONAIRE LYNX CLUB</SectionTitle>

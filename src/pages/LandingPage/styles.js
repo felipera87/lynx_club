@@ -4,6 +4,8 @@ import { shade } from 'polished';
 
 import halfFullBackground from '../../assets/half-full-box.png';
 
+import { device } from '../../utils/screenBreakpoints';
+
 export const Container = tw.div`
   flex
   flex-col
@@ -11,7 +13,7 @@ export const Container = tw.div`
 `;
 
 const FixedHeightCoverSection = styled.section`
-  height: 800px;
+  height: ${props => props.height}px;
 `;
 
 export const CoverSection = tw(FixedHeightCoverSection)`
@@ -37,16 +39,21 @@ const CoverTitleCustomHeaders = styled.div`
 `;
 
 export const CoverTitle = tw(CoverTitleCustomHeaders)`
-  text-9xl
+  text-4xl
+  md:text-9xl
+  w-full
   font-black
   text-center
+  z-10
 `;
 
 export const SectionTitle = tw.div`
-  text-5xl
+  text-4xl
+  md:text-5xl
   font-black
   text-center
   mb-14
+  z-10
 `;
 
 export const MintContainer = tw.div`
@@ -74,20 +81,32 @@ export const IncrementContainer = tw(IncrementContainerElements)`
   justify-around
   text-xl
   w-full
-  mb-5
+  md:mb-5
+  mb-10
   z-10
 `;
 
 export const AboutSection = tw.section`
   flex
   flex-col
-  py-20
-  px-40
+  py-14
+  md:py-20
+  px-5
+  md:px-40
 `;
 
-export const AboutSectionContent = tw.div`
+export const AboutSectionContentElements = styled.div`
+  & > button {
+    width: auto;
+  }
+`;
+
+export const AboutSectionContent = tw(AboutSectionContentElements)`
   flex
-  flex-row
+  flex-col
+  items-center
+  md:items-stretch
+  md:flex-row
   w-full
 `;
 
@@ -106,29 +125,44 @@ export const AboutSectionCover = tw(AboutSectionCoverElements)`
   flex-col
   justify-around
   items-center
-  w-4/12
-  px-14
+  w-full
+  md:w-4/12
+  md:px-14
 `;
 
 export const AboutSectionText = tw.div`
-  w-8/12
+  md:w-8/12
+  w-full
+  my-5
+  md:my-0
 `;
 
 export const StorySection = tw.section`
   flex
   flex-col
   items-center
-  py-32
-  px-52
+  py-14
+  md:py-32
+  px-5
+  md:px-52
   bg-[#ececec]
 `;
 
-export const StorySectionImages = tw.div`
+export const StorySectionImagesElements = styled.div`
+  & > img {
+    width: 25%;
+  }
+`;
+
+export const StorySectionImages = tw(StorySectionImagesElements)`
   flex
+  shrink
   justify-around
   items-center
-  w-7/12
-  mt-20
+  w-full
+  md:w-7/12
+  mt-5
+  md:mt-20
 `;
 
 const RoadmapSectionElements = styled.section`
@@ -139,7 +173,8 @@ const RoadmapSectionElements = styled.section`
 `;
 
 export const RoadmapSection = tw(RoadmapSectionElements)`
-  py-20
+  py-14
+  md:py-20
   flex
   flex-col
   items-center
@@ -154,72 +189,90 @@ export const RoadmapSectionLine = tw.div`
 
 export const RoadmapTimelineBlockLink = styled.div`
   position: absolute;
-  height: 700px;
+  height: calc(100% + 50px);
   width: 10px;
   background-color: black;
-  top: 80px;
+  top: 0;
   left: 35px;
-  z-index: 0;
+  z-index: -1;
 `;
 
 const RoadmapSectionTimelineItemElements = styled.div`
   display: flex;
   justify-content: center;
-  width: 60%;
-  height: 100px;
+  width: 100%;
 
   &:not(:first-child) {
     margin-top: 50px;
   }
 
-  & > div.timeline-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: auto;
+  & > div.timeline-box-container {
     width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    background-color: black;
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
+    height: auto;
     margin: 0 5%;
     position: relative;
-    z-index: 10;
 
-    ${props => {
-      if (props.halfWhiteBackground) {
-        return css`
-          background: url(${halfFullBackground});
-          background-size: 100% 100%;
-          border: 2px solid black;
-        `;
-      }
+    & > div.timeline-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      background-color: black;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      z-index: 10;
 
-      if (props.whiteBackground) {
-        return css`
-          background-color: white;
-          color: black;
-          border: 2px solid black;
-        `;
-      }
+      ${props => {
+        if (props.halfWhiteBackground) {
+          return css`
+            background: url(${halfFullBackground});
+            background-size: 100% 100%;
+            border: 2px solid black;
+          `;
+        }
 
-      return css``;
-    }}
+        if (props.whiteBackground) {
+          return css`
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+          `;
+        }
+
+        return css``;
+      }}
+    }
   }
 
   & > h3 {
     width: 15%;
     text-align: right;
+  }
+
+  h3 {
     font-size: 18px;
     font-weight: 700;
   }
 
-  & > p {
+  & > div.timeline-text {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
     width: 50%;
+    & > p {
+      font-size: 12px;
+    }
+  }
+
+  ${device.md} {
+    width: 60%;
   }
 `;
 
@@ -227,7 +280,7 @@ export const RoadmapSectionTimelineItem = tw(
   RoadmapSectionTimelineItemElements,
 )`
   flex
-  items-center
+  md:items-center
 `;
 
 export const DevelopmentRoadmapSection = tw.section`
@@ -238,18 +291,57 @@ export const DevelopmentRoadmapSection = tw.section`
   bg-black
   text-white
   relative
-  h-[900px]
+  md:h-[900px]
+`;
+
+export const DevelopmentRoadmapItemContainer = tw.ul`
+  z-10
+`;
+
+const DevelopmentRoadmapItemElements = styled.li`
+  margin: 0px 15px;
+  padding: 20px 10px;
+  background-color: transparent;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(46px);
+  border-radius: 14px;
+
+  &:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  & > h3 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  & > p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+`;
+
+export const DevelopmentRoadmapItem = tw(DevelopmentRoadmapItemElements)`
+  flex
+  flex-col
 `;
 
 const MeetTheClubSectionElements = styled.section`
   & > p {
-    width: 70%;
+    width: 100%;
     text-align: center;
   }
 
   & > button {
     margin-top: 40px;
     width: auto;
+  }
+
+  ${device.md} {
+    & > p {
+      width: 70%;
+      text-align: center;
+    }
   }
 `;
 
@@ -258,7 +350,8 @@ export const MeetTheClubSection = tw(MeetTheClubSectionElements)`
   flex-col
   items-center
   py-20
-  px-52
+  px-5
+  md:px-52
 `;
 
 const QuestionSectionElements = styled.section`
@@ -274,7 +367,7 @@ export const QuestionSection = tw(QuestionSectionElements)`
   items-center
   w-full
   py-20
-  px-52
+  md:px-52
   bg-black
   text-white
 `;
@@ -284,7 +377,7 @@ export const TeamSection = tw.section`
   flex-col
   items-center
   py-20
-  px-52
+  md:px-52
   bg-[#ececec]
 `;
 
@@ -294,7 +387,7 @@ export const TeamMembers = tw.div`
 `;
 
 const TeamMemberCardElements = styled.div`
-  flex: 1 0 20%;
+  flex: 1 0 50%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -314,6 +407,10 @@ const TeamMemberCardElements = styled.div`
   & > span {
     font-size: 14px;
     color: #626262;
+  }
+
+  ${device.md} {
+    flex: 1 0 20%;
   }
 `;
 

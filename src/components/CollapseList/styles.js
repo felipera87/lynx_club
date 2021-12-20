@@ -29,6 +29,8 @@ export const Item = styled.li`
       color: ${props => (props.isOpen ? 'white' : 'black')};
       padding: 5px;
       border-radius: 8px;
+      width: 25px;
+      height: 25px;
     }
   }
 `;
