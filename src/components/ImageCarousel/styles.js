@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { device } from '../../utils/screenBreakpoints';
-
 export const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 200px;
   width: 100%;
+  overflow-x: hidden;
   z-index: 5;
   position: relative;
 `;
@@ -17,11 +16,9 @@ export const Content = styled.div`
   justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 100%;
+  width: ${props => props.size};
   height: 100%;
   position: absolute;
-  overflow-x: hidden;
-  padding: 0 auto;
 `;
 
 export const DisplayImage = styled.div`
@@ -32,30 +29,36 @@ export const DisplayImage = styled.div`
 
   margin: 0 20px;
 
+  position: absolute;
+
   ${props => {
-    const sizeMobile =
-      200 - 80 * Math.abs(props.middlePosition - props.position);
-
-    const blurMobile = 5 * Math.abs(props.middlePosition - props.position);
-
-    return css`
-      width: ${sizeMobile > 0 ? sizeMobile : 0}px;
-      height: ${sizeMobile > 0 ? sizeMobile : 0}px;
-      filter: blur(${blurMobile}px);
-    `;
-  }}
-  ${device.md} {
-    ${props => {
-      const size = 180 - 20 * Math.abs(props.middlePosition - props.position);
-      const blur = Math.abs(props.middlePosition - props.position);
-
+    if (props.animationTimeReference > 0 && !props.isLastImage) {
       return css`
+        transition: left 1s, width 1s, height 1s;
+      `;
+    }
+    return css``;
+  }}
+
+  ${props => {
+    const { size } = props;
+    const blur = props.imageBlurFactor * props.positionDistanceToMiddle;
+
+    if (!props.isLastImage) {
+      return css`
+        left: ${props.distanceToLeft + props.shiftImages}px;
         width: ${size > 0 ? size : 0}px;
         height: ${size > 0 ? size : 0}px;
         filter: blur(${blur}px);
       `;
-    }}
-  }
+    }
+    return css`
+      left: ${props.distanceToLeft + props.shiftImages}px;
+      width: ${size > 0 ? size : 0}px;
+      height: ${size > 0 ? size : 0}px;
+      filter: blur(${blur}px);
+    `;
+  }}
 
   & > img {
     width: 100%;

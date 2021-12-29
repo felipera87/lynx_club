@@ -7,6 +7,8 @@ import AppProvider from './hooks';
 import './index.css';
 import GlobalStyle from './styles/global';
 
+import 'aos/dist/aos.css';
+
 const App = () => {
   return (
     <Router>

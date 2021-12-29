@@ -4,7 +4,7 @@ import tw from 'tailwind-styled-components';
 export const Container = tw.header`
   absolute
   inset-0
-  z-10
+  z-30
 `;
 
 const MainHeaderElements = styled.div`

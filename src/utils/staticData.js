@@ -15,6 +15,8 @@ export const coverImages = [
   { src: astronautCat },
   { src: laserCat },
   { src: astronautCat },
+  { src: laserCat },
+  { src: astronautCat },
 ];
 
 export const questions = [
@@ -138,85 +140,85 @@ export const roadmapData = [
 export const developmentRoadmapData = [
   {
     id: uuid(),
-    title: 'BLC DAO  ',
+    title: '1 BLC DAO  ',
     description:
       'The Billionaire Lynx DAO (decentralized autonomous organization) is formed with our native token $LYNX. This DAO will be used for a multitude of things starting with the fractionalization of blue-chip NFTs (using fractional.art) that we as a community we will vote on as a whole. Future plans of our DAO will include the opportunity to invest in both physical and digital assets including real estate, sports cards, musicians, creators, and business opportunities.',
   },
   {
     id: uuid(),
-    title: 'BLC DAO  ',
+    title: '2 BLC DAO  ',
     description:
       'The Billionaire Lynx DAO (decentralized autonomous organization) is formed with our native token $LYNX. This DAO will be used for a multitude of things starting with the fractionalization of blue-chip NFTs (using fractional.art) that we as a community we will vote on as a whole. Future plans of our DAO will include the opportunity to invest in both physical and digital assets including real estate, sports cards, musicians, creators, and business opportunities.',
   },
   {
     id: uuid(),
-    title: 'In-Person Events',
+    title: '3 In-Person Events',
     description:
       'The most active members of our community will be invited to a private in-person event (Location to be announced). We also plan to host more in person events if demand is high. (Your token serves as your admission). We have a lot of future plans that together as a community we will vote on.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers',
+    title: '4 Guest Speakers',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers',
+    title: '5 Guest Speakers',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers1',
+    title: '6 Guest Speakers1',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers2',
+    title: '7 Guest Speakers2',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers3',
+    title: '8 Guest Speakers3',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers4',
+    title: '9 Guest Speakers4',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers5',
+    title: '10 Guest Speakers5',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers6',
+    title: '11 Guest Speakers6',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers7',
+    title: '12 Guest Speakers7',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers8',
+    title: '13 Guest Speakers8',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: 'Guest Speakers9',
+    title: '14 Guest Speakers9',
     description:
       'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },

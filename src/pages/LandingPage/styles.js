@@ -1,8 +1,6 @@
 import tw from 'tailwind-styled-components';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { shade } from 'polished';
-
-import halfFullBackground from '../../assets/half-full-box.png';
 
 import { device } from '../../utils/screenBreakpoints';
 
@@ -178,109 +176,6 @@ export const RoadmapSection = tw(RoadmapSectionElements)`
   flex
   flex-col
   items-center
-`;
-
-export const RoadmapSectionLine = tw.div`
-  flex
-  flex-col
-  justify-around
-  items-center
-`;
-
-export const RoadmapTimelineBlockLink = styled.div`
-  position: absolute;
-  height: calc(100% + 50px);
-  width: 10px;
-  background-color: black;
-  top: 0;
-  left: 35px;
-  z-index: -1;
-`;
-
-const RoadmapSectionTimelineItemElements = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-
-  &:not(:first-child) {
-    margin-top: 50px;
-  }
-
-  & > div.timeline-box-container {
-    width: 80px;
-    height: auto;
-    margin: 0 5%;
-    position: relative;
-
-    & > div.timeline-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-grow: 0;
-      flex-shrink: 0;
-      flex-basis: auto;
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      background-color: black;
-      color: white;
-      font-size: 18px;
-      font-weight: 700;
-      z-index: 10;
-
-      ${props => {
-        if (props.halfWhiteBackground) {
-          return css`
-            background: url(${halfFullBackground});
-            background-size: 100% 100%;
-            border: 2px solid black;
-          `;
-        }
-
-        if (props.whiteBackground) {
-          return css`
-            background-color: white;
-            color: black;
-            border: 2px solid black;
-          `;
-        }
-
-        return css``;
-      }}
-    }
-  }
-
-  & > h3 {
-    width: 15%;
-    text-align: right;
-  }
-
-  h3 {
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  & > div.timeline-text {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-
-    width: 50%;
-    & > p {
-      font-size: 12px;
-    }
-  }
-
-  ${device.md} {
-    width: 60%;
-  }
-`;
-
-export const RoadmapSectionTimelineItem = tw(
-  RoadmapSectionTimelineItemElements,
-)`
-  flex
-  md:items-center
 `;
 
 export const DevelopmentRoadmapSection = tw.section`

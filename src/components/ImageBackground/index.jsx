@@ -1,10 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { v4 as uuid } from 'uuid';
 
 import { Container, ImageContainer } from './styles';
 
 const ImageBackground = ({ numberOfImages, imageSet, containerHeight }) => {
-  const backgroundImages = useMemo(() => {
+  const [backgroundImages, setBackgroundImages] = useState([]);
+
+  useEffect(() => {
     const result = [];
 
     // eslint-disable-next-line no-undef
@@ -24,11 +26,39 @@ const ImageBackground = ({ numberOfImages, imageSet, containerHeight }) => {
         positionY,
         scale,
         opacity,
+        translateX: 0,
+        translateY: 0,
       });
     }
 
-    return result;
+    setBackgroundImages(result);
   }, [containerHeight, imageSet, numberOfImages]);
+
+  const generateRandomInteger = useCallback((min, max) => {
+    return Math.floor(min + Math.random() * (max + 1 - min));
+  }, []);
+
+  const changeImagesPosition = useCallback(() => {
+    setBackgroundImages(oldImages => {
+      return oldImages.map(image => {
+        const newImage = { ...image };
+        const x = generateRandomInteger(-300, 300);
+        const y = generateRandomInteger(-300, 300);
+
+        newImage.translateX = x;
+        newImage.translateY = y;
+
+        return newImage;
+      });
+    });
+  }, [generateRandomInteger]);
+
+  useEffect(() => {
+    setInterval(() => {
+      changeImagesPosition();
+    }, 2500);
+  }, [changeImagesPosition]);
+
   return (
     <Container>
       {backgroundImages.map(image => {
@@ -39,6 +69,8 @@ const ImageBackground = ({ numberOfImages, imageSet, containerHeight }) => {
             left={image.positionX}
             scale={image.scale}
             opacity={image.opacity}
+            translateX={image.translateX}
+            translateY={image.translateY}
           >
             <img src={image.src} alt="Small background" />
           </ImageContainer>

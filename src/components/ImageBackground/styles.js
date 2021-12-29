@@ -14,10 +14,13 @@ export const Container = styled.div`
 export const ImageContainer = styled.div`
   position: absolute;
 
+  transition: transform 2s;
+
   ${props => {
     return css`
       opacity: ${props.opacity};
-      transform: scale(${props.scale});
+      transform: scale(${props.scale})
+        translate(${props.translateX}px, ${props.translateY}px);
       top: ${props.top}px;
       left: ${props.left}px;
     `;

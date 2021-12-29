@@ -73,10 +73,18 @@ const Header = () => {
         )}
 
         <SocialMedia>
-          <a href="https://discord.com/" target="_blank" rel="noreferrer">
+          <a
+            href="https://instagram.com/lynxclubnft/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaDiscord />
           </a>
-          <a href="https://twitter.com/" target="_blank" rel="noreferrer">
+          <a
+            href="https://twitter.com/lynxclubnft/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaTwitter />
           </a>
         </SocialMedia>

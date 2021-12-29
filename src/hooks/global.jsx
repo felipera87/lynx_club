@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import Aos from 'aos';
 
 const GlobalContext = createContext({});
 
@@ -16,6 +17,10 @@ const GlobalProvider = ({ children }) => {
       // eslint-disable-next-line no-undef
       setDocumentWidth(document.body.clientWidth);
     });
+  }, []);
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
   }, []);
 
   return (

@@ -16,9 +16,6 @@ import {
   StorySection,
   StorySectionImages,
   RoadmapSection,
-  RoadmapSectionLine,
-  RoadmapTimelineBlockLink,
-  RoadmapSectionTimelineItem,
   DevelopmentRoadmapSection,
   DevelopmentRoadmapItemContainer,
   DevelopmentRoadmapItem,
@@ -35,6 +32,7 @@ import TextCarousel from '../../components/TextCarousel';
 import CollapseList from '../../components/CollapseList';
 import StarBackground from '../../components/StarBackground';
 import ImageBackground from '../../components/ImageBackground';
+import Timeline from '../../components/Timeline';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -83,11 +81,11 @@ const LandingPage = () => {
           height={documentWidth > screenBreakpoints.md ? 800 : 720}
         />
         <ImageCarousel images={coverImages} />
-        <CoverTitle>
+        <CoverTitle data-aos="zoom-in-down">
           <h1>BILLIONAIRE</h1>
           <h1>LYNX CLUB</h1>
         </CoverTitle>
-        <MintContainer>
+        <MintContainer data-aos="fade-up">
           <IncrementContainer>
             <button type="button" onClick={() => handleMintIncrement('dec')}>
               <FiMinus />
@@ -101,12 +99,12 @@ const LandingPage = () => {
         </MintContainer>
       </CoverSection>
       <AboutSection>
-        <SectionTitle>ABOUT</SectionTitle>
-        <AboutSectionContent>
+        <SectionTitle data-aos="fade-down">ABOUT</SectionTitle>
+        <AboutSectionContent data-aos="fade-right">
           <AboutSectionCover>
-            <img src={astronautCat} alt="About Lynx Club" />
+            <img src={astronautCat} alt="About Lynx Club" data-aos="zoom-in" />
             {documentWidth > screenBreakpoints.md && (
-              <Button dark onClick={handleMintButtonClick}>
+              <Button data-aos="fade-up" dark onClick={handleMintButtonClick}>
                 MINT HERE
               </Button>
             )}
@@ -146,15 +144,15 @@ const LandingPage = () => {
             </p>
           </AboutSectionText>
           {documentWidth <= screenBreakpoints.md && (
-            <Button dark onClick={handleMintButtonClick}>
+            <Button dark onClick={handleMintButtonClick} data-aos="fade-up">
               MINT HERE
             </Button>
           )}
         </AboutSectionContent>
       </AboutSection>
       <StorySection>
-        <SectionTitle>THE STORY</SectionTitle>
-        <p>
+        <SectionTitle data-aos="fade-down">THE STORY</SectionTitle>
+        <p data-aos="fade-left">
           An ambitious lynx goes out into the world to try to achieve their
           biggest dreams. Upon doing so, they are met with a lack of support
           from friends, family, and others telling them that their dreams are
@@ -174,41 +172,15 @@ const LandingPage = () => {
           achieve their wildest dreams.
         </p>
         <StorySectionImages>
-          <img src={astronautCat} alt="Story" />
-          <img src={astronautCat} alt="Story" />
-          <img src={astronautCat} alt="Story" />
+          <img data-aos="zoom-in" src={astronautCat} alt="Story" />
+          <img data-aos="zoom-in" src={astronautCat} alt="Story" />
+          <img data-aos="zoom-in" src={astronautCat} alt="Story" />
         </StorySectionImages>
       </StorySection>
       <RoadmapSection>
-        <SectionTitle>ROADMAP</SectionTitle>
-        <RoadmapSectionLine>
-          {roadmapData.map((roadmapItem, index) => (
-            <RoadmapSectionTimelineItem
-              key={roadmapItem.id}
-              whiteBackground={roadmapItem.whiteBackground}
-              halfWhiteBackground={roadmapItem.halfWhiteBackground}
-            >
-              {documentWidth > screenBreakpoints.md && (
-                <h3>{roadmapItem.title}</h3>
-              )}
-              <div className="timeline-box-container">
-                <div className="timeline-box">
-                  <span>{roadmapItem.checkpoint}</span>
-                </div>
-                {index <= roadmapData.length - 3 && (
-                  <RoadmapTimelineBlockLink />
-                )}
-              </div>
-              <div className="timeline-text">
-                {documentWidth <= screenBreakpoints.md && (
-                  <h3>{roadmapItem.title}</h3>
-                )}
-                <p>{roadmapItem.description}</p>
-              </div>
-            </RoadmapSectionTimelineItem>
-          ))}
-        </RoadmapSectionLine>
-        <Button dark onClick={handleMintButtonClick}>
+        <SectionTitle data-aos="fade-down">ROADMAP</SectionTitle>
+        <Timeline roadmapData={roadmapData} />
+        <Button dark onClick={handleMintButtonClick} data-aos="fade-up">
           MINT HERE
         </Button>
       </RoadmapSection>
@@ -218,7 +190,7 @@ const LandingPage = () => {
           imageSet={[laserCat, astronautCat]}
           containerHeight={900}
         />
-        <SectionTitle>DEVELOPMENT ROADMAP</SectionTitle>
+        <SectionTitle data-aos="fade-down">DEVELOPMENT ROADMAP</SectionTitle>
         {documentWidth > screenBreakpoints.md ? (
           <TextCarousel items={developmentRoadmapData} />
         ) : (
@@ -234,27 +206,33 @@ const LandingPage = () => {
           </DevelopmentRoadmapItemContainer>
         )}
       </DevelopmentRoadmapSection>
-      <MeetTheClubSection>
-        <SectionTitle>MEET THE BILLIONAIRE LYNX CLUB</SectionTitle>
-        <p>
+      <MeetTheClubSection data-aos="fade-right">
+        <SectionTitle data-aos="fade-down">
+          MEET THE BILLIONAIRE LYNX CLUB
+        </SectionTitle>
+        <p data-aos="fade-left">
           With over 170+ hand-drawn traits, owning a Billionaire Lynx comes with
           an exclusive membership to a closed group of collectors. This
           community is made of like-minded Lynx who desire success at the
           highest level.
         </p>
-        <Button dark>Join Discord</Button>
+        <Button data-aos="fade-up" dark>
+          Join Discord
+        </Button>
       </MeetTheClubSection>
       <QuestionSection>
-        <SectionTitle>HAVE A QUESTION?</SectionTitle>
-        <CollapseList items={questions} />
-        <Button onClick={handleMintButtonClick}>Mint Here</Button>
+        <SectionTitle data-aos="fade-down">HAVE A QUESTION?</SectionTitle>
+        <CollapseList data-aos="fade-right" items={questions} />
+        <Button data-aos="fade-up" onClick={handleMintButtonClick}>
+          Mint Here
+        </Button>
       </QuestionSection>
       <TeamSection>
-        <SectionTitle>OUR TEAM</SectionTitle>
+        <SectionTitle data-aos="fade-down">OUR TEAM</SectionTitle>
         <TeamMembers>
           {teamMembers.map(teamMember => {
             return (
-              <TeamMemberCard key={teamMember.id}>
+              <TeamMemberCard data-aos="zoom-in" key={teamMember.id}>
                 <img src={teamMember.image} alt={teamMember.name} />
                 <h5>{teamMember.name}</h5>
                 <span>{teamMember.role}</span>

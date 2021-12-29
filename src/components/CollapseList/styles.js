@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Container = styled.ul`
   width: 100%;
@@ -35,7 +36,7 @@ export const Item = styled.li`
   }
 `;
 
-export const ItemDetail = styled.p`
+export const ItemDetail = styled(motion.p)`
   color: #a6a6a6;
   padding-top: 20px;
 `;

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Container = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ export const Content = styled.div`
   overflow-x: hidden;
 `;
 
-export const DisplayItem = styled.div`
+export const DisplayItem = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;

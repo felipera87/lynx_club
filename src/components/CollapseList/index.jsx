@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { v4 as uuid } from 'uuid';
 import { FiMinus, FiPlus } from 'react-icons/fi';
+import { AnimatePresence } from 'framer-motion';
 
 import { Container, Item, ItemDetail } from './styles';
 
@@ -47,7 +48,21 @@ const CollapseList = ({ items }) => {
                 {item.isOpen ? <FiMinus /> : <FiPlus />}
               </button>
             </div>
-            {item.isOpen && <ItemDetail>{item.description}</ItemDetail>}
+            <AnimatePresence>
+              {item.isOpen && (
+                <ItemDetail
+                  initial="collapsed"
+                  animate="open"
+                  exit="collapsed"
+                  variants={{
+                    open: { opacity: 1, height: 'auto' },
+                    collapsed: { opacity: 0, height: 0, padding: 0 },
+                  }}
+                >
+                  {item.description}
+                </ItemDetail>
+              )}
+            </AnimatePresence>
           </Item>
         );
       })}
