@@ -7,7 +7,6 @@ import { Container, Content, DisplayItem } from './styles';
 
 const variants = {
   enter: direction => {
-    console.log('enter', direction);
     return {
       x: direction === 'next' ? 300 : -300,
     };
@@ -16,7 +15,6 @@ const variants = {
     x: 0,
   },
   exit: direction => {
-    console.log('exit', direction);
     return {
       x: direction === 'previous' ? 300 : -300,
     };
