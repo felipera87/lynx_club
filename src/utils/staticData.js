@@ -22,11 +22,13 @@ export const coverImages = [
 export const questions = [
   {
     title: 'What is the Billionaire Lynx club?',
-    description: 'lorem ipsum',
+    description:
+      'The Billionaire Lynx Club is an NFT collection of 10,000 randomly generated lynx, out of the Billionaire Lynx Club, with proof of ownership stored on the Ethereum network, as an ERC 721 mint.',
   },
   {
     title: 'Why did we choose the name Billionaire Lynx Club?',
-    description: 'lorem ipsum',
+    description: `The term billionaire is most often associated with a monetary amount but for us, billionaire is a mindset. Ambitions that for most may seem unachievable but for us, something we strive for every day.
+    In mythology and folklore, the lynx is considered one of the most powerful spirit animals due to their ability to see things others cannot. Along with this, they seek personal freedom at the highest level and is vital to their overall harmony. We as lynx are able to see opportunities where others may not and desire personal freedom as a token of success.`,
   },
   {
     title: 'Why did we create this community?',
@@ -35,39 +37,48 @@ export const questions = [
   },
   {
     title: 'What can I do with my Lynx?',
-    description: 'lorem ipsum',
+    description:
+      'Acquiring one of them will give you access to an ever-growing community of investors, entrepreneurs, musicians, content creators, real estate professionals, e-commerce experts and more! As they say, "your network is your net worth." Owning one will also give you exclusive access to investment opportunities through our DAO. Your Lynx serves as your ticket to everything.',
   },
   {
     title: 'How can I get a Billionaire Lynx?',
-    description: 'lorem ipsum',
+    description:
+      'You will be able to mint Billionaire Lynxes on our website billionairelynxclub.com or directly through the smart contract via our discord server. Our mint is scheduled for early Q1 of 2022, but if you miss out on that they will be available for purchase on Opensea.',
   },
   {
     title: 'How much will it cost to buy one?',
-    description: 'lorem ipsum',
+    description:
+      'Each Lynx will be minted at 0.12 ETH + Gas and will be limited to 5 per transaction. Mint day is planned for early Q1 of 2022 and a more specific date will be announced soon.',
   },
   {
     title: 'Will there be a pre-sale?',
-    description: 'lorem ipsum',
+    description:
+      'Yes, there will be pre-sale for whitelisted members. There is a max of 2 Lynxes for whitelist members. The whitelist supply will be 2000.',
   },
   {
     title: 'How are we different?',
-    description: 'lorem ipsum',
+    description: `This is not a project just built off celebrity endorsement/influencer pumps, we are building a brand that is here to stay. Something that members can be proud to say they are a part of.
+    We are a team that truly prides ourselves on delivering a quality product. We are a group of entrepreneurs ourselves and who know that the road to success can be lonely at times. This community is being formed to directly solve that issue. Together we can help each other in achieving their biggest dreams.`,
   },
   {
     title: 'What will the charity fund be used for?',
-    description: 'lorem ipsum',
+    description:
+      'Our team believes that everyone should have the opportunity to go out and achieve their dreams. As we know, this is not always the case and some people just need an extra boost. To do so, we are going to donate to existing charities and also potentially create our own. Both with the goal to help young entrepreneurs go after their dreams. By being a part of the Billionaire Lynx Club, you are directly impacting the lives of others.',
   },
   {
     title: 'What will the community fund be used for?',
-    description: 'lorem ipsum',
+    description:
+      "The community fund will be used for promotions, future merch development, partnerships, giveaways, and building value for the community. We will also help support some of our own members' projects and innovations through a shark tank style event. We are also very open to hearing suggestions from our community.",
   },
   {
     title: 'Are any tokens withheld from the Sale?',
-    description: 'lorem ipsum',
+    description:
+      'Yes, 300 will be help for the team, giveaways, marketing and brand awareness.',
   },
   {
     title: 'Why do we need royalties?',
-    description: 'lorem ipsum',
+    description:
+      'To start, our royalties will be set at 10%. We have very ambitious goals that will require the capital to take on such ventures. These ventures have the sole purpose of strengthening this community and providing as much value to our holders as possible.',
   },
 ];
 
@@ -140,87 +151,40 @@ export const roadmapData = [
 export const developmentRoadmapData = [
   {
     id: uuid(),
-    title: '1 BLC DAO  ',
+    title: 'BLC DAO  ',
     description:
-      'The Billionaire Lynx DAO (decentralized autonomous organization) is formed with our native token $LYNX. This DAO will be used for a multitude of things starting with the fractionalization of blue-chip NFTs (using fractional.art) that we as a community we will vote on as a whole. Future plans of our DAO will include the opportunity to invest in both physical and digital assets including real estate, sports cards, musicians, creators, and business opportunities.',
+      'The Billionaire Lynx DAO (decentralized autonomous organization) is formed with our native token $LYNX. This DAO will be used for a multitude of things starting with the fractionalization of blue-chip NFTs (using fractional.art) that we as a community we will vote on as a whole. This will give members of our community the ability to make investments that otherwise they would not be able to make on their own. Future plans of our DAO will include the opportunity to invest in both physical and digital assets including real estate, sports cards, musicians, creators, and business opportunities. This will be done mainly through board meetings and shark-tank style event where people will come and pitch our community.',
   },
   {
     id: uuid(),
-    title: '2 BLC DAO  ',
-    description:
-      'The Billionaire Lynx DAO (decentralized autonomous organization) is formed with our native token $LYNX. This DAO will be used for a multitude of things starting with the fractionalization of blue-chip NFTs (using fractional.art) that we as a community we will vote on as a whole. Future plans of our DAO will include the opportunity to invest in both physical and digital assets including real estate, sports cards, musicians, creators, and business opportunities.',
-  },
-  {
-    id: uuid(),
-    title: '3 In-Person Events',
+    title: 'In-Person Events',
     description:
       'The most active members of our community will be invited to a private in-person event (Location to be announced). We also plan to host more in person events if demand is high. (Your token serves as your admission). We have a lot of future plans that together as a community we will vote on.',
   },
   {
     id: uuid(),
-    title: '4 Guest Speakers',
+    title: 'Guest Speakers',
     description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
+      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e-commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
   },
   {
     id: uuid(),
-    title: '5 Guest Speakers',
+    title: 'Billionaire Lynx Concierge',
     description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
+      'As a member of the Billionaire Lynx Club, you get direct access to the Billionaire Lynx Concierge. A concierge service that prides itself on securing assets to unique experiences for members. This includes but is not limited to sporting events, concerts, luxury items, VIP events, restaurant reservations, vacations and more.',
   },
   {
     id: uuid(),
-    title: '6 Guest Speakers1',
-    description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
+    title: 'Metaverse Development',
+    description: `Although we plan on having in-person events, we also plan on developing events in the Metaverse through virtual worlds like The Sandbox and Decentraland. Events will have stages where people will come and speak, along with networking events and special musical guests. There is also potential for your Lynx to be your avatar. Consider this the “Metaverse Mastermind.”
+
+      We also have plans to develop a play-to-earn entrepreneur style game where your NFT will be serve as your character in the game. By doing so we hope to create another stream of revenue for our holders.`,
   },
   {
     id: uuid(),
-    title: '7 Guest Speakers2',
+    title: 'Community Competitions',
     description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
-  },
-  {
-    id: uuid(),
-    title: '8 Guest Speakers3',
-    description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
-  },
-  {
-    id: uuid(),
-    title: '9 Guest Speakers4',
-    description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
-  },
-  {
-    id: uuid(),
-    title: '10 Guest Speakers5',
-    description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
-  },
-  {
-    id: uuid(),
-    title: '11 Guest Speakers6',
-    description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
-  },
-  {
-    id: uuid(),
-    title: '12 Guest Speakers7',
-    description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
-  },
-  {
-    id: uuid(),
-    title: '13 Guest Speakers8',
-    description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
-  },
-  {
-    id: uuid(),
-    title: '14 Guest Speakers9',
-    description:
-      'We plan to have many influential people come and speak directly to our community. Speakers will include but are not limited to C-Suite executives, real estate investors, e- commerce experts, musicians and more. These speakers will be able to offer invaluable advice and guidance to our community. We also plan on having the community vote on desired guests.',
+      'We will have competitions within our community with special prices for the winners. With this we hope to build a greater sense of community.',
   },
 ];
 

@@ -32,7 +32,8 @@ export const MainHeader = tw(MainHeaderElements)`
   flex-row
   justify-between
   items-center
-  h-14
+  h-24
+  pt-2
   px-5
   md:px-20
 `;
@@ -54,12 +55,16 @@ export const CollapsableMenu = tw(CollapsableMenuElements)`
   h-50
 `;
 
-export const Logo = tw.div`
-  bg-white
+const LogoElements = styled.div`
+  & > a > img {
+    width: 150px;
+  }
+`;
+
+export const Logo = tw(LogoElements)`
   rounded-lg
   text-black
   py-1
-  p-2
   font-bold
   text-xs
 `;
@@ -68,7 +73,14 @@ export const Navigator = tw.nav`
   space-x-8
 `;
 
-export const SocialMedia = tw.div`
+const SocialMediaElements = styled.div`
+  & > a > img {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const SocialMedia = tw(SocialMediaElements)`
   flex
   flex-row
   space-x-4
