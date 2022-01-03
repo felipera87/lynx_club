@@ -1,13 +1,12 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { v4 as uuid } from 'uuid';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, useAnimation } from 'framer-motion';
 
 import { Container, Content, DisplayItem } from './styles';
 
 const variants = {
   enter: direction => {
-    console.log('enter', direction);
     return {
       x: direction === 'next' ? 300 : -300,
     };
@@ -15,15 +14,16 @@ const variants = {
   center: {
     x: 0,
   },
-  exit: direction => {
-    console.log('exit', direction);
+  enter2: direction => {
     return {
-      x: direction === 'previous' ? 300 : -300,
+      x: direction === 'next' ? [300, 0] : [-300, 0],
     };
   },
 };
 
 const TextCarousel = ({ items }) => {
+  const controls = useAnimation();
+
   const [itemCollection, setItemCollection] = useState([]);
   const [firstItemIndex, setFirstItemIndex] = useState(0);
   const [direction, setDirection] = useState('');
@@ -83,8 +83,15 @@ const TextCarousel = ({ items }) => {
     newDirection => {
       setDirection(newDirection);
       handleIndex(newDirection);
+
+      if (newDirection === 'next') {
+        controls.start({ x: [300, 0] });
+      }
+      if (newDirection === 'previous') {
+        controls.start({ x: [-300, 0] });
+      }
     },
-    [handleIndex],
+    [handleIndex, controls],
   );
 
   return (
@@ -105,7 +112,6 @@ const TextCarousel = ({ items }) => {
             isFirstItem
             initial="enter"
             animate="center"
-            exit="exit"
             custom={direction}
             variants={variants}
             transition={{ duration: 0.4, type: 'easeInOut' }}
@@ -114,30 +120,58 @@ const TextCarousel = ({ items }) => {
             <p>{firstItem.description}</p>
           </DisplayItem>
         )}
-        <Content>
-          {middleItems.map(item => {
-            return (
+      </AnimatePresence>
+      <Content>
+        {middleItems.length > 0 && (
+          <>
+            <AnimatePresence>
               <DisplayItem
-                key={item.id}
-                initial="enter"
+                key={middleItems[0].id}
                 animate="center"
-                exit="exit"
                 custom={direction}
+                initial="enter"
                 variants={variants}
                 transition={{ duration: 0.4, type: 'easeInOut' }}
               >
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <h3>{middleItems[0].title}</h3>
+                <p>{middleItems[0].description}</p>
               </DisplayItem>
-            );
-          })}
-        </Content>
+            </AnimatePresence>
+            <AnimatePresence>
+              <DisplayItem
+                key={middleItems[1].id}
+                animate="center"
+                custom={direction}
+                initial="enter"
+                variants={variants}
+                transition={{ duration: 0.4, type: 'easeInOut' }}
+              >
+                <h3>{middleItems[1].title}</h3>
+                <p>{middleItems[1].description}</p>
+              </DisplayItem>
+            </AnimatePresence>
+            <AnimatePresence>
+              <DisplayItem
+                key={middleItems[2].id}
+                animate="center"
+                custom={direction}
+                initial="enter"
+                variants={variants}
+                transition={{ duration: 0.4, type: 'easeInOut' }}
+              >
+                <h3>{middleItems[2].title}</h3>
+                <p>{middleItems[2].description}</p>
+              </DisplayItem>
+            </AnimatePresence>
+          </>
+        )}
+      </Content>
+      <AnimatePresence>
         {lastItem && (
           <DisplayItem
             key={lastItem.id}
             initial="enter"
             animate="center"
-            exit="exit"
             custom={direction}
             variants={variants}
             transition={{ duration: 0.4, type: 'easeInOut' }}

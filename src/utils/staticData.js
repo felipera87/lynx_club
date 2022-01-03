@@ -1,22 +1,69 @@
 import { v4 as uuid } from 'uuid';
 
-import astronautCat from '../assets/astronaut_cat.png';
-import laserCat from '../assets/laser_cat.png';
+import artistLynx from '../assets/mockups/artist_lynx.png';
+import bluesuitLynx from '../assets/mockups/bluesuit_lynx.png';
+import cyborgLynx from '../assets/mockups/cyborg_lynx.png';
+import greaserLynx from '../assets/mockups/greaser_lynx.png';
+import gumLynx from '../assets/mockups/gum_lynx.png';
+import labLynx from '../assets/mockups/lab_lynx.png';
+import lebronLynx from '../assets/mockups/lebron_lynx.png';
+import skiLynx from '../assets/mockups/ski_lynx.png';
+import spaceLynx from '../assets/mockups/space_lynx.png';
+import tuxLynx from '../assets/mockups/tux_lynx.png';
+
+export const imageSet = [
+  artistLynx,
+  bluesuitLynx,
+  cyborgLynx,
+  greaserLynx,
+  gumLynx,
+  labLynx,
+  lebronLynx,
+  skiLynx,
+  spaceLynx,
+  tuxLynx,
+];
 
 export const coverImages = [
-  { src: astronautCat },
-  { src: laserCat },
-  { src: astronautCat },
-  { src: laserCat },
-  { src: astronautCat },
-  { src: laserCat },
-  { src: astronautCat },
-  { src: laserCat },
-  { src: astronautCat },
-  { src: laserCat },
-  { src: astronautCat },
-  { src: laserCat },
-  { src: astronautCat },
+  {
+    src: artistLynx,
+  },
+  {
+    src: bluesuitLynx,
+  },
+  {
+    src: cyborgLynx,
+  },
+  {
+    src: greaserLynx,
+  },
+  {
+    src: gumLynx,
+  },
+  {
+    src: labLynx,
+  },
+  {
+    src: lebronLynx,
+  },
+  {
+    src: skiLynx,
+  },
+  {
+    src: spaceLynx,
+  },
+  {
+    src: tuxLynx,
+  },
+  {
+    src: artistLynx,
+  },
+  {
+    src: bluesuitLynx,
+  },
+  {
+    src: cyborgLynx,
+  },
 ];
 
 export const questions = [
@@ -193,60 +240,60 @@ export const teamMembers = [
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: artistLynx,
   },
   {
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: bluesuitLynx,
   },
   {
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: cyborgLynx,
   },
   {
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: greaserLynx,
   },
   {
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: gumLynx,
   },
   {
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: labLynx,
   },
   {
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: lebronLynx,
   },
   {
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: skiLynx,
   },
   {
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: spaceLynx,
   },
   {
     id: uuid(),
     name: 'Rikong',
     role: 'CO-FOUNDER',
-    image: astronautCat,
+    image: tuxLynx,
   },
 ];
