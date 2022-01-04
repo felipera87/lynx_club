@@ -4,7 +4,13 @@ import { shade } from 'polished';
 
 import { device } from '../../utils/screenBreakpoints';
 
-export const Container = tw.div`
+const ContainerElements = styled.div`
+  img.mockup-display-image {
+    border-radius: 8px;
+  }
+`;
+
+export const Container = tw(ContainerElements)`
   flex
   flex-col
   w-screen
@@ -178,7 +184,13 @@ export const RoadmapSection = tw(RoadmapSectionElements)`
   items-center
 `;
 
-export const DevelopmentRoadmapSection = tw.section`
+const DevelopmentRoadmapSectionElements = styled.section`
+  & > div.text-carousel-box {
+    height: 610px;
+  }
+`;
+
+export const DevelopmentRoadmapSection = tw(DevelopmentRoadmapSectionElements)`
   py-20
   flex
   flex-col

@@ -13,6 +13,9 @@ import {
   SocialMedia,
 } from './styles';
 
+import logo from '../../assets/logo.jpg';
+import openseaIcon from '../../assets/opensea.svg';
+
 import { useGlobalData } from '../../hooks/global';
 
 import { screenBreakpoints } from '../../utils/screenBreakpoints';
@@ -59,7 +62,15 @@ const Header = () => {
           </button>
         )}
 
-        <Logo>LOGO</Logo>
+        <Logo>
+          <a
+            href="https://billionairelynxclub.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={logo} alt="Lynx Billionaire Club" />
+          </a>
+        </Logo>
         {documentWidth > screenBreakpoints.md && (
           <Navigator>
             {navigatorRoutes.map(route => {
@@ -86,6 +97,13 @@ const Header = () => {
             rel="noreferrer"
           >
             <FaTwitter />
+          </a>
+          <a
+            href="https://opensea.io/collection/billionairelynxclub"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={openseaIcon} alt="Opensea" />
           </a>
         </SocialMedia>
       </MainHeader>
