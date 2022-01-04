@@ -28,6 +28,10 @@ export const ImageContainer = styled.div`
 
   & > img {
     width: 100%;
+    max-width: 150px;
     height: 100%;
+    max-height: 150px;
+
+    border-radius: 8px;
   }
 `;

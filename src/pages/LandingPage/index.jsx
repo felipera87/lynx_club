@@ -36,20 +36,17 @@ import Timeline from '../../components/Timeline';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-import astronautCat from '../../assets/astronaut_cat.png';
-import laserCat from '../../assets/laser_cat.png';
-
 import { screenBreakpoints } from '../../utils/screenBreakpoints';
-
-import { useGlobalData } from '../../hooks/global';
-
 import {
+  imageSet,
   coverImages,
   questions,
   roadmapData,
   developmentRoadmapData,
   teamMembers,
 } from '../../utils/staticData';
+
+import { useGlobalData } from '../../hooks/global';
 
 const LandingPage = () => {
   const { mintQuantity, setMintQuantity, documentWidth } = useGlobalData();
@@ -102,7 +99,12 @@ const LandingPage = () => {
         <SectionTitle data-aos="fade-down">ABOUT</SectionTitle>
         <AboutSectionContent data-aos="fade-right">
           <AboutSectionCover>
-            <img src={astronautCat} alt="About Lynx Club" data-aos="zoom-in" />
+            <img
+              className="mockup-display-image"
+              src={imageSet[0]}
+              alt="About Lynx Club"
+              data-aos="zoom-in"
+            />
             {documentWidth > screenBreakpoints.md && (
               <Button data-aos="fade-up" dark onClick={handleMintButtonClick}>
                 MINT HERE
@@ -172,9 +174,24 @@ const LandingPage = () => {
           achieve their wildest dreams.
         </p>
         <StorySectionImages>
-          <img data-aos="zoom-in" src={astronautCat} alt="Story" />
-          <img data-aos="zoom-in" src={astronautCat} alt="Story" />
-          <img data-aos="zoom-in" src={astronautCat} alt="Story" />
+          <img
+            className="mockup-display-image"
+            data-aos="zoom-in"
+            src={imageSet[5]}
+            alt="Story"
+          />
+          <img
+            className="mockup-display-image"
+            data-aos="zoom-in"
+            src={imageSet[6]}
+            alt="Story"
+          />
+          <img
+            className="mockup-display-image"
+            data-aos="zoom-in"
+            src={imageSet[7]}
+            alt="Story"
+          />
         </StorySectionImages>
       </StorySection>
       <RoadmapSection>
@@ -187,12 +204,14 @@ const LandingPage = () => {
       <DevelopmentRoadmapSection>
         <ImageBackground
           numberOfImages={20}
-          imageSet={[laserCat, astronautCat]}
+          imageSet={imageSet}
           containerHeight={900}
         />
         <SectionTitle data-aos="fade-down">DEVELOPMENT ROADMAP</SectionTitle>
         {documentWidth > screenBreakpoints.md ? (
-          <TextCarousel items={developmentRoadmapData} />
+          <div className="text-carousel-box">
+            <TextCarousel items={developmentRoadmapData} />
+          </div>
         ) : (
           <DevelopmentRoadmapItemContainer>
             {developmentRoadmapData.map(devRoadmapData => {
