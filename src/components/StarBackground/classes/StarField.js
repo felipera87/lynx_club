@@ -6,7 +6,7 @@ class StarField {
     this.canvas2dContext = canvas2dContext;
     this.halfWidth = halfWidth;
     this.halfHeight = halfHeight;
-    this.starsSpeed = 0.025;
+    this.starsSpeed = 0.008;
 
     for (let i = 0, len = numberOfStars; i < len; i += 1) {
       this.stars.push(

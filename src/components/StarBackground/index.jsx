@@ -41,14 +41,14 @@ const StarBackground = ({ numberOfStars, height }) => {
   const initializeStarField = useCallback(() => {
     if (canvas2dContext) {
       const newStarField = new StarField(
-        250,
+        numberOfStars,
         canvasHalfWidth,
         canvasHalfHeight,
         canvas2dContext,
       );
       setStarField(newStarField);
     }
-  }, [canvas2dContext, canvasHalfHeight, canvasHalfWidth]);
+  }, [canvas2dContext, canvasHalfHeight, canvasHalfWidth, numberOfStars]);
 
   useEffect(() => {
     if (canvasRef) {
@@ -68,7 +68,7 @@ const StarBackground = ({ numberOfStars, height }) => {
 
       initializeStarField();
     }
-  }, [canvas2dContext, canvasRef, height, initializeStarField, numberOfStars]);
+  }, [canvas2dContext, canvasRef, height, initializeStarField]);
 
   useEffect(() => {
     draw();

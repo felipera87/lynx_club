@@ -1,5 +1,4 @@
 import React, { useMemo, useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
 import { FaTwitter, FaDiscord } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
 import { v4 as uuid } from 'uuid';
@@ -15,6 +14,7 @@ import {
 
 import logo from '../../assets/logo.jpg';
 import openseaIcon from '../../assets/opensea.svg';
+import openseaBlackIcon from '../../assets/opensea_black.svg';
 
 import { useGlobalData } from '../../hooks/global';
 
@@ -32,22 +32,22 @@ const Header = () => {
     return [
       {
         id: uuid(),
-        path: '/specifications',
+        path: '#about-section',
         label: 'Specifications',
       },
       {
         id: uuid(),
-        path: '/whatisthis',
+        path: '#story-section',
         label: 'What it is?',
       },
       {
         id: uuid(),
-        path: '/roadmap',
+        path: '#roadmap-section',
         label: 'Roadmap',
       },
       {
         id: uuid(),
-        path: '/team',
+        path: '#team-section',
         label: 'The Team',
       },
     ];
@@ -62,22 +62,24 @@ const Header = () => {
           </button>
         )}
 
-        <Logo>
-          <a
-            href="https://billionairelynxclub.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={logo} alt="Lynx Billionaire Club" />
-          </a>
-        </Logo>
+        {!isMenuOpen && (
+          <Logo>
+            <a
+              href="https://billionairelynxclub.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={logo} alt="Lynx Billionaire Club" />
+            </a>
+          </Logo>
+        )}
         {documentWidth > screenBreakpoints.md && (
           <Navigator>
             {navigatorRoutes.map(route => {
               return (
-                <Link key={route.id} to={route.path}>
+                <a key={route.id} href={route.path}>
                   {route.label}
-                </Link>
+                </a>
               );
             })}
           </Navigator>
@@ -85,14 +87,14 @@ const Header = () => {
 
         <SocialMedia>
           <a
-            href="https://instagram.com/lynxclubnft/"
+            href="https://twitter.com/lynxclubnft/"
             target="_blank"
             rel="noreferrer"
           >
             <FaDiscord />
           </a>
           <a
-            href="https://twitter.com/lynxclubnft/"
+            href="https://instagram.com/lynxclubnft/"
             target="_blank"
             rel="noreferrer"
           >
@@ -103,7 +105,8 @@ const Header = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={openseaIcon} alt="Opensea" />
+            {isMenuOpen && <img src={openseaBlackIcon} alt="Opensea" />}
+            {!isMenuOpen && <img src={openseaIcon} alt="Opensea" />}
           </a>
         </SocialMedia>
       </MainHeader>
@@ -112,7 +115,7 @@ const Header = () => {
           {navigatorRoutes.map(route => {
             return (
               <li key={route.id}>
-                <Link to={route.path}>{route.label}</Link>
+                <a href={route.path}>{route.label}</a>
               </li>
             );
           })}

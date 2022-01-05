@@ -7,6 +7,7 @@ import { device } from '../../utils/screenBreakpoints';
 const ContainerElements = styled.div`
   img.mockup-display-image {
     border-radius: 8px;
+    max-width: 280px;
   }
 `;
 
@@ -64,6 +65,7 @@ export const MintContainer = tw.div`
   flex
   flex-col
   text-white
+  z-50
 `;
 
 const IncrementContainerElements = styled.div`
@@ -305,6 +307,7 @@ const TeamMemberCardElements = styled.div`
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
+    object-fit: cover;
   }
 
   & > h5 {

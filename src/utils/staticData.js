@@ -200,13 +200,13 @@ export const developmentRoadmapData = [
     id: uuid(),
     title: 'BLC DAO  ',
     description:
-      'The Billionaire Lynx DAO (decentralized autonomous organization) is formed with our native token $LYNX. This DAO will be used for a multitude of things starting with the fractionalization of blue-chip NFTs (using fractional.art) that we as a community we will vote on as a whole. This will give members of our community the ability to make investments that otherwise they would not be able to make on their own. Future plans of our DAO will include the opportunity to invest in both physical and digital assets including real estate, sports cards, musicians, creators, and business opportunities. This will be done mainly through board meetings and shark-tank style event where people will come and pitch our community.',
+      'The Billionaire Lynx DAO (decentralized autonomous organization) is formed with our native token $LYNX. This DAO will be used for a multitude of things starting with the fractionalization of blue-chip NFTs (using fractional.art) that we as a community we will vote on as a whole. Future plans of our DAO will include the opportunity to invest in both physical and digital assets including real estate, sports cards, musicians, creators, and business opportunities. We also plan to host a Shark Tank style event to help launch other projects and ventures.',
   },
   {
     id: uuid(),
     title: 'In-Person Events',
     description:
-      'The most active members of our community will be invited to a private in-person event (Location to be announced). We also plan to host more in person events if demand is high. (Your token serves as your admission). We have a lot of future plans that together as a community we will vote on.',
+      'The most active members of our community will have ALL expenses paid to LynxCon 2022 - a private in-person conference with some of the most exciting brands/minds in the NFT and Web3 space. This event will blend both the physical and virtual worlds to create a unique experience unlike any other. The location will be announced after mint and your Lynx is verifiable for admission. There is the potential for a continued yearly conference as well.',
   },
   {
     id: uuid(),
