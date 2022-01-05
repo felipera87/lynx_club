@@ -58,15 +58,15 @@ const LandingPage = () => {
 
   const handleMintIncrement = useCallback(
     incType => {
-      if (mintQuantity > 0) {
-        if (incType === 'dec') {
-          setMintQuantity(mintQuantity - 1);
-        } else {
-          setMintQuantity(mintQuantity + 1);
-        }
+      if (incType === 'dec') {
+        setMintQuantity(oldMintQuantity =>
+          oldMintQuantity - 1 <= 0 ? 0 : oldMintQuantity - 1,
+        );
+      } else {
+        setMintQuantity(oldMintQuantity => oldMintQuantity + 1);
       }
     },
-    [mintQuantity, setMintQuantity],
+    [setMintQuantity],
   );
 
   return (
@@ -74,7 +74,7 @@ const LandingPage = () => {
       <Header />
       <CoverSection height={documentWidth > screenBreakpoints.md ? 800 : 720}>
         <StarBackground
-          numberOfStars={5000}
+          numberOfStars={300}
           height={documentWidth > screenBreakpoints.md ? 800 : 720}
         />
         <ImageCarousel images={coverImages} />
@@ -95,13 +95,13 @@ const LandingPage = () => {
           <Button onClick={handleMintButtonClick}>MINT HERE</Button>
         </MintContainer>
       </CoverSection>
-      <AboutSection>
+      <AboutSection id="about-section">
         <SectionTitle data-aos="fade-down">ABOUT</SectionTitle>
         <AboutSectionContent data-aos="fade-right">
           <AboutSectionCover>
             <img
               className="mockup-display-image"
-              src={imageSet[0]}
+              src={imageSet[1]}
               alt="About Lynx Club"
               data-aos="zoom-in"
             />
@@ -152,7 +152,7 @@ const LandingPage = () => {
           )}
         </AboutSectionContent>
       </AboutSection>
-      <StorySection>
+      <StorySection id="story-section">
         <SectionTitle data-aos="fade-down">THE STORY</SectionTitle>
         <p data-aos="fade-left">
           An ambitious lynx goes out into the world to try to achieve their
@@ -173,35 +173,37 @@ const LandingPage = () => {
           seek out to form a community of like-minded lynxes to help each other
           achieve their wildest dreams.
         </p>
-        <StorySectionImages>
-          <img
-            className="mockup-display-image"
-            data-aos="zoom-in"
-            src={imageSet[5]}
-            alt="Story"
-          />
-          <img
-            className="mockup-display-image"
-            data-aos="zoom-in"
-            src={imageSet[6]}
-            alt="Story"
-          />
-          <img
-            className="mockup-display-image"
-            data-aos="zoom-in"
-            src={imageSet[7]}
-            alt="Story"
-          />
-        </StorySectionImages>
+        {documentWidth > screenBreakpoints.md && (
+          <StorySectionImages>
+            <img
+              className="mockup-display-image"
+              data-aos="zoom-in"
+              src={imageSet[5]}
+              alt="Story"
+            />
+            <img
+              className="mockup-display-image"
+              data-aos="zoom-in"
+              src={imageSet[6]}
+              alt="Story"
+            />
+            <img
+              className="mockup-display-image"
+              data-aos="zoom-in"
+              src={imageSet[8]}
+              alt="Story"
+            />
+          </StorySectionImages>
+        )}
       </StorySection>
-      <RoadmapSection>
+      <RoadmapSection id="roadmap-section">
         <SectionTitle data-aos="fade-down">ROADMAP</SectionTitle>
         <Timeline roadmapData={roadmapData} />
         <Button dark onClick={handleMintButtonClick} data-aos="fade-up">
           MINT HERE
         </Button>
       </RoadmapSection>
-      <DevelopmentRoadmapSection>
+      <DevelopmentRoadmapSection id="development-roadmap-section">
         <ImageBackground
           numberOfImages={20}
           imageSet={imageSet}
@@ -225,7 +227,7 @@ const LandingPage = () => {
           </DevelopmentRoadmapItemContainer>
         )}
       </DevelopmentRoadmapSection>
-      <MeetTheClubSection data-aos="fade-right">
+      <MeetTheClubSection data-aos="fade-right" id="meettheclub-section">
         <SectionTitle data-aos="fade-down">
           MEET THE BILLIONAIRE LYNX CLUB
         </SectionTitle>
@@ -239,14 +241,14 @@ const LandingPage = () => {
           Join Discord
         </Button>
       </MeetTheClubSection>
-      <QuestionSection>
+      <QuestionSection id="question-section">
         <SectionTitle data-aos="fade-down">HAVE A QUESTION?</SectionTitle>
         <CollapseList data-aos="fade-right" items={questions} />
         <Button data-aos="fade-up" onClick={handleMintButtonClick}>
           Mint Here
         </Button>
       </QuestionSection>
-      <TeamSection>
+      <TeamSection id="team-section">
         <SectionTitle data-aos="fade-down">OUR TEAM</SectionTitle>
         <TeamMembers>
           {teamMembers.map(teamMember => {

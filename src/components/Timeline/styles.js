@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 import tw from 'tailwind-styled-components';
 
-import halfFullBackground from '../../assets/half-full-box.png';
-
 import { device } from '../../utils/screenBreakpoints';
 
 export const Container = styled.div`
@@ -70,24 +68,7 @@ const TimelineItemElements = styled.div`
           `;
         }
         return css``;
-      }}/* ${props => {
-        if (props.halfWhiteBackground) {
-          return css`
-            background: url(${halfFullBackground});
-            background-size: 100% 100%;
-            border: 2px solid black;
-          `;
-        }
-
-        if (props.whiteBackground) {
-          return css`
-            background-color: white;
-            color: black;
-          `;
-        }
-
-        return css``;
-      }} */
+      }}
     }
   }
 
@@ -108,7 +89,7 @@ const TimelineItemElements = styled.div`
 
     width: 50%;
     & > p {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 

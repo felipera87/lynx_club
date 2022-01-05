@@ -36,6 +36,7 @@ export const MainHeader = tw(MainHeaderElements)`
   pt-2
   px-5
   md:px-20
+  relative
 `;
 
 const CollapsableMenuElements = styled.ul`
@@ -56,8 +57,9 @@ export const CollapsableMenu = tw(CollapsableMenuElements)`
 `;
 
 const LogoElements = styled.div`
+  left: calc(50% - 50px);
   & > a > img {
-    width: 150px;
+    width: 100px;
   }
 `;
 
@@ -67,6 +69,8 @@ export const Logo = tw(LogoElements)`
   py-1
   font-bold
   text-xs
+  absolute
+  md:static
 `;
 
 export const Navigator = tw.nav`
@@ -74,9 +78,15 @@ export const Navigator = tw.nav`
 `;
 
 const SocialMediaElements = styled.div`
-  & > a > img {
-    width: 24px;
-    height: 24px;
+  & > a {
+    & > svg {
+      width: 24px;
+      height: 24px;
+    }
+    & > img {
+      width: 24px;
+      height: 24px;
+    }
   }
 `;
 
