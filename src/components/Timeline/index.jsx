@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useMemo,
+  useCallback,
+} from 'react';
 
 import {
   Container,
@@ -47,11 +53,15 @@ const Timeline = ({ roadmapData }) => {
     windowScrollY,
   ]);
 
-  useEffect(() => {
+  const calculateElementPositions = useCallback(() => {
     if (timelineContainerRef) {
-      const shiftOffset = Math.floor(
+      let shiftOffset = Math.floor(
         timelineContainerRef.current.clientHeight / 2,
       );
+
+      if (documentWidth <= screenBreakpoints.sm) {
+        shiftOffset = Math.floor(timelineContainerRef.current.clientHeight / 4);
+      }
 
       setTimelineContainerOffsetTop(
         timelineContainerRef.current.offsetTop - shiftOffset,
@@ -76,7 +86,11 @@ const Timeline = ({ roadmapData }) => {
       }
       setTimelineContainerItems([...timelineItems]);
     }
-  }, []);
+  }, [documentWidth]);
+
+  useEffect(() => {
+    calculateElementPositions();
+  }, [calculateElementPositions]);
 
   const barPosition = useMemo(() => {
     return timelineLinkerBarHeight + timelineContainerOffsetTop;
@@ -87,8 +101,9 @@ const Timeline = ({ roadmapData }) => {
     window.addEventListener('scroll', () => {
       // eslint-disable-next-line no-undef
       setWindowScrollY(window.scrollY);
+      calculateElementPositions();
     });
-  }, []);
+  }, [calculateElementPositions]);
 
   return (
     <Container>
