@@ -96,7 +96,7 @@ const LandingPage = () => {
         </MintContainer>
       </CoverSection>
       <AboutSection id="about-section">
-        <SectionTitle data-aos="fade-down">ABOUT</SectionTitle>
+        <SectionTitle>ABOUT</SectionTitle>
         <AboutSectionContent data-aos="fade-right">
           <AboutSectionCover>
             <img
@@ -154,7 +154,7 @@ const LandingPage = () => {
       </AboutSection>
       <StorySection id="story-section">
         <SectionTitle data-aos="fade-down">THE STORY</SectionTitle>
-        <p data-aos="fade-left">
+        <p data-aos="fade-right">
           An ambitious lynx goes out into the world to try to achieve their
           biggest dreams. Upon doing so, they are met with a lack of support
           from friends, family, and others telling them that their dreams are
@@ -231,7 +231,7 @@ const LandingPage = () => {
         <SectionTitle data-aos="fade-down">
           MEET THE BILLIONAIRE LYNX CLUB
         </SectionTitle>
-        <p data-aos="fade-left">
+        <p data-aos="fade-right">
           With over 170+ hand-drawn traits, owning a Billionaire Lynx comes with
           an exclusive membership to a closed group of collectors. This
           community is made of like-minded Lynx who desire success at the

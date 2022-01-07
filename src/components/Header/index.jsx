@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useCallback } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import { FaTwitter, FaDiscord } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
 import { v4 as uuid } from 'uuid';
@@ -77,9 +78,9 @@ const Header = () => {
           <Navigator>
             {navigatorRoutes.map(route => {
               return (
-                <a key={route.id} href={route.path}>
+                <HashLink key={route.id} to={route.path}>
                   {route.label}
-                </a>
+                </HashLink>
               );
             })}
           </Navigator>
