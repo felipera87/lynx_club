@@ -19,6 +19,7 @@ export const Content = styled.div`
   width: ${props => props.size};
   height: 100%;
   position: absolute;
+  overflow-x: hidden;
 `;
 
 export const DisplayImage = styled.div`
