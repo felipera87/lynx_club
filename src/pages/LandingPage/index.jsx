@@ -113,9 +113,10 @@ const LandingPage = () => {
           </AboutSectionCover>
           <AboutSectionText>
             <p>
-              The Billionaire Lynx Club (BLC) is a private collection of 10,000
-              unique characters. With each Lynx comes proof-of-ownership stored
-              on the Ethereum network as an ERC-721 Non-Fungible Token (NFT).
+              The Billionaire Lynx Club is a Creative Collective of Lynx NFTs
+              built to connect and inspire.. With each Lynx comes
+              proof-of-ownership stored on the Ethereum network as an ERC-721
+              Non-Fungible Token (NFT).
               <br />
               <br />
               Acquiring one of them will give you access to an ever-growing
@@ -232,7 +233,7 @@ const LandingPage = () => {
           MEET THE BILLIONAIRE LYNX CLUB
         </SectionTitle>
         <p data-aos="fade-right">
-          With over 170+ hand-drawn traits, owning a Billionaire Lynx comes with
+          With over 140+ hand-drawn traits, owning a Billionaire Lynx comes with
           an exclusive membership to a closed group of collectors. This
           community is made of like-minded Lynx who desire success at the
           highest level.
