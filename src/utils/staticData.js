@@ -80,27 +80,27 @@ export const questions = [
   {
     title: 'Why did we create this community?',
     description:
-      "We created this community because we know how tough it is to find other like-minded people who want to support your goals. On top of this, one of the biggest factors in a persons success is the people they surround themselves with. Even if you're still on your journey this will be a place to surround yourself with people who have achieved their goals and others who are also still on their path. We want our member to network with each-other as much as possible.",
+      "We created this community because we know how tough it is to find other like-minded people who want to support your goals. On top of this, one of the biggest factors in a persons success is the people they surround themselves with. Even if you're still on your journey this will be a place to surround yourself with people who have achieved their goals and others who are also still on their path. We want our members to network with each-other as much as possible.",
   },
   {
     title: 'What can I do with my Lynx?',
     description:
-      'Acquiring one of them will give you access to an ever-growing community of investors, entrepreneurs, musicians, content creators, real estate professionals, e-commerce experts and more! As they say, "your network is your net worth." Owning one will also give you exclusive access to investment opportunities through our DAO. Your Lynx serves as your ticket to everything.',
+      'Acquiring one of them will give you access to an ever-growing community of investors, entrepreneurs, musicians, content creators, real estate professionals, e-commerce experts and more! As they say, "your network is your net worth." Owning one will also give you exclusive access to investment opportunities through our DAO. Your Lynx also serves as your ticket to events, both online and in-person.',
   },
   {
     title: 'How can I get a Billionaire Lynx?',
     description:
-      'You will be able to mint Billionaire Lynxes on our website billionairelynxclub.com or directly through the smart contract via our discord server. Our mint is scheduled for early Q1 of 2022, but if you miss out on that they will be available for purchase on Opensea.',
+      'You will be able to mint Billionaire Lynxes on our website billionairelynxclub.com or directly through the smart contract via our discord server. Our mint is scheduled for FAQ 2 early Q1 of 2022, but if you miss out on that they will be available for purchase on Opensea.',
   },
   {
     title: 'How much will it cost to buy one?',
     description:
-      'Each Lynx will be minted at 0.12 ETH + Gas and will be limited to 5 per transaction. Mint day is planned for early Q1 of 2022 and a more specific date will be announced soon.',
+      'Price TBD. Mint day is planned for early Q1 of 2022 and a more specific date will be announced soon.',
   },
   {
     title: 'Will there be a pre-sale?',
     description:
-      'Yes, there will be pre-sale for whitelisted members. There is a max of 2 Lynxes for whitelist members. The whitelist supply will be 2000.',
+      'Yes, there will be pre-sale for whitelisted members. There is a max of 2 Lynxes for whitelist members.',
   },
   {
     title: 'How are we different?',
