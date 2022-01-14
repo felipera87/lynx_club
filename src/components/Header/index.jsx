@@ -13,7 +13,7 @@ import {
   SocialMedia,
 } from './styles';
 
-import logo from '../../assets/logo.jpg';
+import logo from '../../assets/logo_transparent.png';
 import openseaIcon from '../../assets/opensea.svg';
 import openseaBlackIcon from '../../assets/opensea_black.svg';
 
