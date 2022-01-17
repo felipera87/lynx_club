@@ -125,6 +125,13 @@ const LandingPage = () => {
               Please see Roadmap and FAQ for more details.
               <br />
               <br />
+              As an owner of a Lynx you are invited to LynxCon 2022, a private
+              in-person conference featuring some of the most exciting
+              minds/brands in the crypto, NFT, and Web3 space. This event will
+              blend both the physical and virtual worlds to create a unique
+              experience unlike any other
+              <br />
+              <br />
               Being part of this community will also give you exclusive access
               to investment opportunities, both digital and physical that will
               help build generational wealth among our members and truly make an
@@ -159,7 +166,7 @@ const LandingPage = () => {
           An ambitious lynx goes out into the world to try to achieve their
           biggest dreams. Upon doing so, they are met with a lack of support
           from friends, family, and others telling them that their dreams are
-          just that.... only dreams.
+          just that… only dreams.
           <br />
           <br />
           Then one day when stumbling through the forest, they meet another lynx

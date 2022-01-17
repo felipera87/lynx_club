@@ -14,7 +14,6 @@ const ContainerElements = styled.div`
 export const Container = tw(ContainerElements)`
   flex
   flex-col
-  w-screen
 `;
 
 const FixedHeightCoverSection = styled.section`
@@ -122,6 +121,7 @@ const AboutSectionCoverElements = styled.div`
   }
 
   & > button {
+    margin-top: 50px;
     width: auto;
   }
 `;

@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 import tw from 'tailwind-styled-components';
 
+import openseaShadowedIcon from '../../assets/opensea_shadow.svg';
+
 export const Container = tw.header`
   absolute
   inset-0
@@ -83,10 +85,6 @@ const SocialMediaElements = styled.div`
       width: 24px;
       height: 24px;
     }
-    & > img {
-      width: 24px;
-      height: 24px;
-    }
   }
 `;
 
@@ -95,4 +93,16 @@ export const SocialMedia = tw(SocialMediaElements)`
   flex-row
   space-x-4
   md:text-2xl
+`;
+
+export const Icon = styled.div`
+  width: 25px;
+  height: 25px;
+  background: url(${props => props.src});
+  background-size: 100% 100%;
+
+  &:hover {
+    background: url(${openseaShadowedIcon});
+    background-size: 100% 100%;
+  }
 `;

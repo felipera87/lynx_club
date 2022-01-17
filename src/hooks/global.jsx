@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+} from 'react';
 import Aos from 'aos';
 
 const GlobalContext = createContext({});
@@ -23,16 +29,16 @@ const GlobalProvider = ({ children }) => {
     Aos.init({ duration: 1000 });
   }, []);
 
+  const value = useMemo(() => {
+    return {
+      mintQuantity,
+      setMintQuantity,
+      documentWidth,
+    };
+  }, [documentWidth, mintQuantity]);
+
   return (
-    <GlobalContext.Provider
-      value={{
-        mintQuantity,
-        setMintQuantity,
-        documentWidth,
-      }}
-    >
-      {children}
-    </GlobalContext.Provider>
+    <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>
   );
 };
 

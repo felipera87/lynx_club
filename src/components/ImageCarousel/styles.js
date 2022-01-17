@@ -22,7 +22,9 @@ export const Content = styled.div`
   overflow-x: hidden;
 `;
 
-export const DisplayImage = styled.div`
+export const DisplayImage = styled.div.attrs(props => ({
+  size: props.imageSize,
+}))`
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;

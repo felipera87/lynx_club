@@ -54,9 +54,11 @@ const ImageBackground = ({ numberOfImages, imageSet, containerHeight }) => {
   }, [generateRandomInteger]);
 
   useEffect(() => {
-    setInterval(() => {
-      changeImagesPosition();
-    }, 2500);
+    if (changeImagesPosition) {
+      setInterval(() => {
+        changeImagesPosition();
+      }, 2500);
+    }
   }, [changeImagesPosition]);
 
   return (

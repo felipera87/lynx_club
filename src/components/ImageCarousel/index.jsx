@@ -126,7 +126,7 @@ const ImageCarousel = ({ images }) => {
               key={image.id}
               positionDistanceToMiddle={image.positionDistanceToMiddle}
               distanceToLeft={image.distanceToLeft}
-              size={image.size}
+              imageSize={image.size}
               imageBlurFactor={imageBlurFactor}
               isLastImage={image.position === imageCollection.length - 1}
               shiftImages={shiftImages}

@@ -8,7 +8,7 @@ import { Container, Content, DisplayItem } from './styles';
 const variants = {
   enter: direction => {
     return {
-      x: direction === 'next' ? 300 : -300,
+      x: direction === 'next' ? 320 : -320,
     };
   },
   center: {
@@ -16,7 +16,7 @@ const variants = {
   },
   enter2: direction => {
     return {
-      x: direction === 'next' ? [300, 0] : [-300, 0],
+      x: direction === 'next' ? [320, 0] : [-320, 0],
     };
   },
 };
@@ -116,8 +116,10 @@ const TextCarousel = ({ items }) => {
             variants={variants}
             transition={{ duration: 0.4, type: 'easeInOut' }}
           >
-            <h3>{firstItem.title}</h3>
-            <p>{firstItem.description}</p>
+            <div>
+              <h3>{firstItem.title}</h3>
+              <p>{firstItem.description}</p>
+            </div>
           </DisplayItem>
         )}
       </AnimatePresence>
@@ -133,8 +135,10 @@ const TextCarousel = ({ items }) => {
                 variants={variants}
                 transition={{ duration: 0.4, type: 'easeInOut' }}
               >
-                <h3>{middleItems[0].title}</h3>
-                <p>{middleItems[0].description}</p>
+                <div>
+                  <h3>{middleItems[0].title}</h3>
+                  <p>{middleItems[0].description}</p>
+                </div>
               </DisplayItem>
             </AnimatePresence>
             <AnimatePresence>
@@ -146,8 +150,10 @@ const TextCarousel = ({ items }) => {
                 variants={variants}
                 transition={{ duration: 0.4, type: 'easeInOut' }}
               >
-                <h3>{middleItems[1].title}</h3>
-                <p>{middleItems[1].description}</p>
+                <div>
+                  <h3>{middleItems[1].title}</h3>
+                  <p>{middleItems[1].description}</p>
+                </div>
               </DisplayItem>
             </AnimatePresence>
             <AnimatePresence>
@@ -159,8 +165,10 @@ const TextCarousel = ({ items }) => {
                 variants={variants}
                 transition={{ duration: 0.4, type: 'easeInOut' }}
               >
-                <h3>{middleItems[2].title}</h3>
-                <p>{middleItems[2].description}</p>
+                <div>
+                  <h3>{middleItems[2].title}</h3>
+                  <p>{middleItems[2].description}</p>
+                </div>
               </DisplayItem>
             </AnimatePresence>
           </>
@@ -177,8 +185,10 @@ const TextCarousel = ({ items }) => {
             transition={{ duration: 0.4, type: 'easeInOut' }}
             isLastItem
           >
-            <h3>{lastItem.title}</h3>
-            <p>{lastItem.description}</p>
+            <div>
+              <h3>{lastItem.title}</h3>
+              <p>{lastItem.description}</p>
+            </div>
           </DisplayItem>
         )}
       </AnimatePresence>

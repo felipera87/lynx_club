@@ -48,16 +48,24 @@ export const DisplayItem = styled(motion.div)`
 
   width: 25%;
 
-  & > h3 {
-    font-weight: 700;
-    margin-bottom: 25px;
-    font-size: 20px;
-    text-align: start;
-    width: 70%;
-  }
+  & > div {
+    background-color: transparent;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(46px);
+    border-radius: 8px;
+    width: 80%;
 
-  & > p {
-    width: 70%;
+    & > h3 {
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 20px;
+      text-align: start;
+      padding: 15px;
+    }
+
+    & > p {
+      padding: 15px;
+    }
   }
 
   ${props => {

@@ -11,6 +11,7 @@ import {
   Logo,
   Navigator,
   SocialMedia,
+  Icon,
 } from './styles';
 
 import logo from '../../assets/logo_transparent.png';
@@ -106,8 +107,8 @@ const Header = () => {
             target="_blank"
             rel="noreferrer"
           >
-            {isMenuOpen && <img src={openseaBlackIcon} alt="Opensea" />}
-            {!isMenuOpen && <img src={openseaIcon} alt="Opensea" />}
+            {isMenuOpen && <Icon src={openseaBlackIcon} />}
+            {!isMenuOpen && <Icon src={openseaIcon} />}
           </a>
         </SocialMedia>
       </MainHeader>

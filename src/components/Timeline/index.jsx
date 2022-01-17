@@ -54,7 +54,7 @@ const Timeline = ({ roadmapData }) => {
   ]);
 
   const calculateElementPositions = useCallback(() => {
-    if (timelineContainerRef) {
+    if (timelineContainerRef && timelineContainerRef.current) {
       let shiftOffset = Math.floor(
         timelineContainerRef.current.clientHeight / 2,
       );
